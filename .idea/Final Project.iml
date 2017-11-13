@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-extensions-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-bosh-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-compression-jzlib-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-core-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-slf4j-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-experimental-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-extensions-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-im-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-integration-test-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-java7-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-jingle-old-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-legacy-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-integration-test-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-repl-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-dnsjava-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-javax-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-minidns-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-javax-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-provided-4.2.1.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-tcp-4.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-extensions-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-bosh-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-compression-jzlib-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-core-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-slf4j-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-experimental-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-extensions-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-im-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-integration-test-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-jingle-old-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-legacy-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-integration-test-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-repl-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-dnsjava-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-javax-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-minidns-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-javax-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-provided-4.2.1-javadoc.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-tcp-4.2.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-android-extensions-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-bosh-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-compression-jzlib-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-core-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-debug-slf4j-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-experimental-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-extensions-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-im-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-integration-test-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-java7-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-jingle-old-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-legacy-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-omemo-signal-integration-test-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-repl-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-dnsjava-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-javax-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-resolver-minidns-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-javax-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-sasl-provided-4.2.1-sources.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_111/lib/smack-tcp-4.2.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
