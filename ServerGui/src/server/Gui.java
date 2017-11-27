@@ -2,10 +2,8 @@ package Server;
 import java.io.*;
 import java.net.*;
 import java.util.*;
-/**
- *
- * @author varietytubechan
- */
+
+
 public class Gui extends javax.swing.JFrame {
 	ArrayList clientOutputStreams;
         ArrayList<String> onlineUsers;
@@ -36,8 +34,8 @@ public class Gui extends javax.swing.JFrame {
 			String[] data;
 
 			try {
+                            //Data received is seperated with identifiers to match the desired actions required from server
 				while ((message = reader.readLine()) != null) {
-
 					outputPane.append("Received: " + message + "\n");
 					data = message.split(":");
                                         for (String token:data) {
@@ -78,8 +76,6 @@ public class Gui extends javax.swing.JFrame {
     public Gui() {
         initComponents();
     }
-
-
 
     /** This method is called from within the constructor to
      * initialize the form.

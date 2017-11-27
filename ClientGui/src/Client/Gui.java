@@ -9,6 +9,8 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 
+
+
 public class Gui extends javax.swing.JFrame {
     String username, serverIP = "192.168.5.99";
     int Port = 5000;
