@@ -144,6 +144,12 @@ public class Gui extends javax.swing.JFrame {
 
         jLabel1.setText("Username");
 
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameFieldActionPerformed(evt);
+            }
+        });
+
         connectButton.setText("Connect");
 
         disconnectButton.setText("Disconnect");
@@ -225,6 +231,10 @@ public class Gui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldActionPerformed
+
 
     @SuppressWarnings("unchecked")               
 
@@ -285,10 +295,6 @@ public class Gui extends javax.swing.JFrame {
 //        // TODO add your handling code here:
 //        new SettingsWindow().setVisible(true);
 //    }                                          
-
-    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
 
     /**
     * @param args the command line arguments
