@@ -15,6 +15,7 @@ import org.jivesoftware.smack.AbstractXMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.SmackException;
 import org.jivesoftware.smack.ConnectionConfiguration.SecurityMode;
+//import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.SmackException.NotConnectedException;
 import org.jivesoftware.smack.chat.Chat;
 import org.jivesoftware.smack.chat.ChatManager;
@@ -35,7 +36,7 @@ public class Login extends javax.swing.JFrame {
     String username;
     String password;
     Boolean isConnected;
-    
+    Boolean enabled = true;
     /**
      * Creates new form Login
      *
@@ -45,6 +46,41 @@ public class Login extends javax.swing.JFrame {
        
     }
 
+    public void Connect(){
+                //for XMPP the standard TCP port for the server is 5222
+        //"legacy" method of encryption port = 5223
+        XMPPTCPConnectionConfiguration.Builder configBuilder = XMPPTCPConnectionConfiguration.builder();
+  
+        configBuilder.setUsernameAndPassword(username, password);
+        configBuilder.setHost("192.168.91.1");
+        configBuilder.setPort(5223);
+        configBuilder.setSecurityMode(SecurityMode.required);
+        //domain will be set later to create XMPP user address i.e. user@jabber.org
+        //configBuilder.setXmppDomain("chapman.mail.edu");
+
+
+        //will create resource name such as "work" for user@jabber.org/work
+        //not necessary
+        //configBuilder.setResource("SomeResource");
+
+        connection = new XMPPTCPConnection(configBuilder.build());
+
+
+        //connect to server
+        try {
+            
+            connection.connect();
+            isConnected = true;
+
+        } catch (XMPPException | SmackException | IOException | InterruptedException e) {
+                          
+            e.printStackTrace();
+            System.out.println("Failed to open connection");
+            isConnected = false; 
+            System.exit(0);
+            
+        }
+    }
  
 
     /**
@@ -137,49 +173,16 @@ public class Login extends javax.swing.JFrame {
 
     private void userInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userInputActionPerformed
       // TODO add your handling code here:
+        username = userInput.getText();
     }//GEN-LAST:event_userInputActionPerformed
 
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
         // TODO add your handling code here:
+        password = passwordInput.getText();
     }//GEN-LAST:event_passwordInputActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        username = userInput.getText();
-        password = passwordInput.getText();
- 
-        //for XMPP the standard TCP port for the server is 5222
-        XMPPTCPConnectionConfiguration.Builder configBuilder = XMPPTCPConnectionConfiguration.builder();
-        configBuilder.setUsernameAndPassword(username, password);
-        configBuilder.setHost("192.168.91.1");
-        configBuilder.setPort(5222);
-        configBuilder.setSecurityMode(SecurityMode.disabled);
-        //domain will be set later to create XMPP user address i.e. user@jabber.org
-        //configBuilder.setXmppDomain("chapman.mail.edu");
-
-
-        //will create resource name such as "work" for user@jabber.org/work
-        //not necessary
-        //configBuilder.setResource("SomeResource");
-
-        connection = new XMPPTCPConnection(configBuilder.build());
-
-
-        //connect to server
-        try {
-            
-            connection.connect();
-            isConnected = true;
-
-        } catch (XMPPException | SmackException | IOException | InterruptedException e) {
-                          
-            e.printStackTrace();
-            System.out.println("Failed to open connection");
-            isConnected = false; 
-            System.exit(0);
-            
-        }
-    
-            
+        
         if (isConnected = true)
         {
             this.setVisible(false);
@@ -196,9 +199,7 @@ public class Login extends javax.swing.JFrame {
 
      */
     
-    public void submitLogin(String username, String password, boolean worked) throws Exception {
 
-    }
     /**
      * @param args the command line arguments
      */
@@ -227,17 +228,19 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Gui().setVisible(true);
             }
         });
-         
-        Login Submission = new Login();
-        Submission.Login();
-        
-        
     }
+         
+       // Login Submission = new Login();
+        //Submission.Login();
+        
+        
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
@@ -248,3 +251,4 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField userInput;
     // End of variables declaration//GEN-END:variables
 }
+                
