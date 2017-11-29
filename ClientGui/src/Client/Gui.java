@@ -175,6 +175,11 @@ public class Gui extends javax.swing.JFrame {
         jScrollPane3.setViewportView(inputTextArea);
 
         sendButton.setText("Send");
+        sendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,6 +240,27 @@ public class Gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
 
+    private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendButtonActionPerformed
+        //        // TODO add your handling code here:
+        String nothing = "";
+        if ((inputTextArea.getText()).equals(nothing)) {
+            inputTextArea.setText("");
+            inputTextArea.requestFocus();
+        } else {
+            try {
+               writer.println(username + ":" + inputTextArea.getText() + ":" + "Chat");
+               writer.flush(); // flushes the buffer
+            } catch (Exception ex) {
+                chatTextArea.append("Message was not sent. \n");
+            }
+            inputTextArea.setText("");
+            inputTextArea.requestFocus();
+        }
+
+        inputTextArea.setText("");
+        inputTextArea.requestFocus();
+    }//GEN-LAST:event_sendButtonActionPerformed
+
 
     @SuppressWarnings("unchecked")               
 
@@ -270,26 +296,7 @@ public class Gui extends javax.swing.JFrame {
         Disconnect();
     }                                                
 
-    private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-        String nothing = "";
-        if ((inputTextArea.getText()).equals(nothing)) {
-            inputTextArea.setText("");
-            inputTextArea.requestFocus();
-        } else {
-            try {
-               writer.println(username + ":" + inputTextArea.getText() + ":" + "Chat");
-               writer.flush(); // flushes the buffer
-            } catch (Exception ex) {
-                chatTextArea.append("Message was not sent. \n");
-            }
-            inputTextArea.setText("");
-            inputTextArea.requestFocus();
-        }
-
-        inputTextArea.setText("");
-        inputTextArea.requestFocus();
-    }                                          
+                                    
 
 //    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
 //        // TODO add your handling code here:
