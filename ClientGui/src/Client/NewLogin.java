@@ -133,19 +133,24 @@ public class NewLogin extends javax.swing.JFrame {
         password = passwordInput.getText();
         
        try{
-        InetAddress addr = InetAddress.getByName("192.168.217.1"); //or 91.1
+        InetAddress addr = InetAddress.getByName("192.168.1.77"); //or 91.1
         //DomainBareJid serviceName = JidCreate.domainBareFrom("thinkpad-bella");
         XMPPTCPConnectionConfiguration.Builder configBuilder = XMPPTCPConnectionConfiguration.builder();
         
         configBuilder.setUsernameAndPassword(username, password);
-        //configBuilder.setHost("thinkpad-bella"); #should be overridden by setHostAddress
+        //configBuilder.setHost("thinkpad-bella"); //#should be overridden by setHostAddress
         configBuilder.setHostAddress(addr);
         configBuilder.setPort(5223);
+        configBuilder.setXmppDomain("192.168.1.77");
+
         configBuilder.setSecurityMode(SecurityMode.required);
-        configBuilder.setSendPresence(true);
-        //configBuilder.setXmppDomain(serviceName);
+        //configBuilder.setSendPresence(true);
         configBuilder.setDebuggerEnabled(true);
+        configBuilder.setCompressionEnabled(true);
+        //configBuilder.setSocketFactory(SSLSocketFactory);
+        
         configBuilder.build();
+        
         //domain will be set later to create XMPP user address i.e. user@jabber.org
         //configBuilder.setXmppDomain("chapman.mail.edu");
 
