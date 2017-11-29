@@ -7,6 +7,7 @@ package Client;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import javax.net.ssl.HostnameVerifier;
 import javax.swing.JOptionPane;
 
 
@@ -25,6 +26,8 @@ import org.jivesoftware.smack.roster.Roster;
 import org.jivesoftware.smack.roster.RosterEntry;
 import org.jivesoftware.smack.tcp.XMPPTCPConnection;
 import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
+
+
 /**
  *
  * @author bellaceds
@@ -34,10 +37,14 @@ public class NewLogin extends javax.swing.JFrame {
     /**
      * Creates new form NewLogin
      */
+    
+    
     public String username;
     public String password;
     Boolean isConnected = false;
     Boolean enabled = true;
+
+    
     public NewLogin() {
         initComponents();
     }
@@ -55,7 +62,7 @@ public class NewLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         userInput = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        passwordInput = new javax.swing.JTextField();
         loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,7 +98,7 @@ public class NewLogin extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(userInput)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)))
+                            .addComponent(passwordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addComponent(loginButton)))
@@ -106,7 +113,7 @@ public class NewLogin extends javax.swing.JFrame {
                     .addComponent(userInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(loginButton)
@@ -123,7 +130,50 @@ public class NewLogin extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
         username = userInput.getText();
-        password = jTextField2.getText();
+        password = passwordInput.getText();
+        
+       try{
+        InetAddress addr = InetAddress.getByName("192.168.217.1"); //or 91.1
+        //DomainBareJid serviceName = JidCreate.domainBareFrom("thinkpad-bella");
+        XMPPTCPConnectionConfiguration.Builder configBuilder = XMPPTCPConnectionConfiguration.builder();
+        
+        configBuilder.setUsernameAndPassword(username, password);
+        //configBuilder.setHost("thinkpad-bella"); #should be overridden by setHostAddress
+        configBuilder.setHostAddress(addr);
+        configBuilder.setPort(5223);
+        configBuilder.setSecurityMode(SecurityMode.required);
+        configBuilder.setSendPresence(true);
+        //configBuilder.setXmppDomain(serviceName);
+        configBuilder.setDebuggerEnabled(true);
+        configBuilder.build();
+        //domain will be set later to create XMPP user address i.e. user@jabber.org
+        //configBuilder.setXmppDomain("chapman.mail.edu");
+
+
+        //will create resource name such as "work" for user@jabber.org/work
+        //not necessary
+        //configBuilder.setResource("SomeResource");
+                
+        XMPPTCPConnection connection = new XMPPTCPConnection(configBuilder.build());
+
+        
+        //connect to server
+        
+        try{
+            connection.connect();
+            connection.login(username,password);
+            isConnected = true;
+        }catch (XMPPException | SmackException | IOException | InterruptedException e){
+            
+            e.printStackTrace();
+            System.out.println("Failed to open connection");
+            isConnected = false; 
+            System.exit(0);
+        }
+       
+        
+        
+        
         if (isConnected = true)
         {
             this.setVisible(false);
@@ -132,6 +182,12 @@ public class NewLogin extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Username or Password is incorrect"); 
         }
+        
+        
+       }catch(UnknownHostException e){
+           e.printStackTrace();
+       }
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
@@ -172,8 +228,8 @@ public class NewLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton loginButton;
+    private javax.swing.JTextField passwordInput;
     private javax.swing.JTextField userInput;
     // End of variables declaration//GEN-END:variables
 }
