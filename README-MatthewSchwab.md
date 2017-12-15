@@ -1,0 +1,3 @@
+- Created poster in template 
+- Worked on submissions 
+- Tried to help with code, but we kept getting stuck on the server side 
